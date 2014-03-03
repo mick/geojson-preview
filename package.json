@@ -1,0 +1,19 @@
+{
+  "name": "geojson-preview",
+  "main": "./lib/geojson-preview",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Preview geojosn file in your text editor!",
+  "repository": "https://github.com/mick/geojson-preview",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+    "leaflet": "0.7.x",
+    "geojsonhint": "0.2.x",
+    "fs-plus": "2.x",
+    "pathwatcher": "0.16.0",
+    "underscore-plus": "1.x"
+  }
+}
