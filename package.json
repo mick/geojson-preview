@@ -3,7 +3,13 @@
   "main": "./lib/geojson-preview",
   "version": "0.2.0",
   "private": true,
-  "description": "Preview geojosn file in your text editor!",
+  "description": "Preview geojson file in your text editor!",
+  "keywords": [
+    "geojson",
+    "preview",
+    "json",
+    "map"
+  ],
   "repository": "https://github.com/mick/geojson-preview",
   "license": "MIT",
   "engines": {
