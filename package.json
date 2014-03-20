@@ -2,7 +2,6 @@
   "name": "geojson-preview",
   "main": "./lib/geojson-preview",
   "version": "0.2.1",
-  "private": true,
   "description": "Preview geojson file in your text editor!",
   "keywords": [
     "geojson",
@@ -19,7 +18,7 @@
     "leaflet": "0.7.x",
     "geojsonhint": "0.2.x",
     "fs-plus": "2.x",
-    "pathwatcher": "0.16.0",
+    "pathwatcher": "0.19.0",
     "underscore-plus": "1.x"
   }
 }
