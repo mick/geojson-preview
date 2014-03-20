@@ -3,6 +3,7 @@ path = require 'path'
 _ = require 'underscore-plus'
 {File} = require 'pathwatcher'
 geojsonhint = require 'geojsonhint'
+require 'mapbox.js'
 
 module.exports =
 class GeoJSONPreviewView extends ScrollView
@@ -39,22 +40,15 @@ class GeoJSONPreviewView extends ScrollView
   renderGeoJSON: ->
     @showLoading()
     @file.read().then (contents) =>
-
       errors = geojsonhint.hint(contents)
-      console.log(errors, errors.length)
       if errors.length > 0
         @showError(errors)
       else
-        console.log('render map', contents)
         @html $$$ ->
           @div class: 'geojson-preview-map', ''
-        L = require 'leaflet'
-        console.log(L)
-        @map = L.map($(@html).find('.geojson-preview-map')[0]).setView([0, 0],4)
-        L.tileLayer('http://{s}.tiles.mapbox.com/v3/mickt.hdof2a3d/{z}/{x}/{y}.png', {
-          attribution: '&copy; <a href="http://mapbox.com">Mapbox</a> &amp; &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          }).addTo(@map);
-        layer =L.geoJson(JSON.parse(contents)).addTo(@map);
+        window.L.Icon.Default.imagePath = 'http:' + window.L.Icon.Default.imagePath
+        @map = L.mapbox.map($(@html).find('.geojson-preview-map')[0], 'mickt.hdof2a3d').setView([0, 0],4);
+        layer = L.mapbox.featureLayer(JSON.parse(contents)).addTo(@map);
         @map.fitBounds(layer.getBounds())
 
   getTitle: ->
