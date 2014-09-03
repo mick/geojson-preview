@@ -1,7 +1,7 @@
 {
   "name": "geojson-preview",
   "main": "./lib/geojson-preview",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Preview geojson file in your text editor!",
   "keywords": [
     "geojson",
