@@ -18,7 +18,7 @@
     "mapbox.js": "1.6.x",
     "geojsonhint": "0.2.x",
     "fs-plus": "2.x",
-    "pathwatcher": "^1.0",
+    "pathwatcher": "^2.0.10",
     "underscore-plus": "1.x"
   }
 }
